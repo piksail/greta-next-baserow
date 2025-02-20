@@ -1,6 +1,8 @@
-import { createContext } from 'react';
+import { createContext } from "react";
 
 export const UserContext = createContext({
-    preferredTags: ["dev", "infra"],
-    preferredCategory: "tech"
+  currentRegistration: null,
+  preferredTags: ["dev", "infra"],
+  preferredCategory: "tech",
+  setCurrentRegistration: (courseId) => {},
 });

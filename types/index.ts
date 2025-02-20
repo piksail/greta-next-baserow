@@ -22,23 +22,12 @@ export interface BaserowCourse extends BaserowTable {
   name: string;
   start_date: string;
   end_date: string;
-  registration_closing_date: string;
-  address: string | null;
   seats: number;
-  public: string;
   subject: string;
   tags: BaserowForeignKeyRelation[];
   body: string | null;
   image: BaserowFile[];
-  documents: BaserowFile[];
-  registrations: BaserowForeignKeyRelation[];
-  non_member_allowed: boolean;
-  organizers: BaserowForeignKeyRelation[];
-  speakers: BaserowForeignKeyRelation[];
-  status?: BaserowSelectOption<
-    "canceled" | "closed" | "delivered" | "open" | "waiting_list"
-  >;
-  feedback_form: string;
+  category: BaserowSelectOption<string>
 }
 
 export interface BaserowCourseTag extends BaserowTable {

@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { useDebounce } from "@uidotdev/usehooks";
 import { useGetCourseTagsQuery, useGetCoursesQuery } from "@/lib/queries";
 import { BaserowFilters, BaserowFiltersFilter } from "@/types/baserow";
+import CourseCard from "@/components/course-card";
 
 export default function Courses() {
   const titleSearchRef = useRef<HTMLInputElement>(null);
@@ -83,16 +84,16 @@ export default function Courses() {
             <aside className="w-full md:w-[25%] flex flex-col-reverse md:flex-col gap-5 md:gap-10">
               <input
                 ref={titleSearchRef}
-                className="input bg-neutral-700 shadow-lg p-4 text-sm"
+                className="input border-[1px] border-clay-200 rounded shadow p-4 text-sm"
                 placeholder="Rechercher par titre"
                 onChange={onFilterChange}
               />
-              <div className="bg-neutral-700 shadow-lg p-4 text-sm flex flex-col">
+              <div className="border-[1px] border-clay-200 rounded shadow p-4 text-sm flex flex-col">
                 {courseTags?.map((tag, index) => {
                   return (
                     <label key={tag.id}>
                       <input
-                        // @ts-ignore
+                        // @ts-expect-error Is not null
                         ref={(el) => (checkboxRefs.current[index] = el)}
                         type="checkbox"
                         className="mr-1"
@@ -104,11 +105,8 @@ export default function Courses() {
                   );
                 })}
               </div>
-              <div className="bg-neutral-700 shadow-lg p-4 text-sm">
-                <p>
-                  Pour participer à une formation,{" "}
-                  <strong>il est indispensable de s&apos;y inscrire</strong>.
-                </p>
+              <div className="border-[1px] border-clay-200 rounded shadow p-4 text-sm">
+                <Link href="/" className="bg-hydrangea-300 text-hydrangea-950 font-semibold py-3 px-6 rounded-xl inline-flex mt-12">Home</Link>
               </div>
             </aside>
             <div className=" flex-1">
@@ -116,9 +114,9 @@ export default function Courses() {
                 <ol className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 ">
                   {courses.map((course) => {
                     return (
-                      <li key={course.id} className="[&>*]:h-full ">
+                      <li key={course.id} className="*:h-full ">
+                        <CourseCard course={course} />
                         {/* TODO reprendre ici faire un composant course card PUIS faire une page inscrire qqn et faire un state machine */}
-                        <div className="bg-neutral-700 p-4">{course.name}</div>
                       </li>
                     );
                   })}
