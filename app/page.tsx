@@ -2,6 +2,7 @@
 
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "@/app/contexts";
+import Link from "next/link";
 
 export default function Home() {
   const currentUser = useContext(UserContext);
@@ -12,7 +13,7 @@ export default function Home() {
       try {
         const response = await fetch('https://base.piksail.com/api/database/rows/table/727/?user_field_names=true', {
           headers: {
-            "Authorization": `Token ${process.env.NEXT_PUBLIC_PUBLIC_API_TOKEN}`
+            "Authorization": `Token ${process.env.NEXT_PUBLIC_BASEROW_PUBLIC_API_TOKEN}`
           }
         })
         const data = await response.json()
@@ -33,13 +34,13 @@ export default function Home() {
         </nav>
       </header>
       <main className="">
-        <p>TODO</p>
         <p>{courses.length} courses</p>
         <ul>
           {courses.filter((course) => course.category.value === currentUser.preferredCategory).map((course) => (
             <li key={course.id}>{course.name}</li>
           ))}
         </ul>
+        <Link href="/courses">Go to courses</Link>
       </main>
       <footer>
       </footer>
