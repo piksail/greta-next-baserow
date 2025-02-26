@@ -1,61 +1,82 @@
-"use client";
-
-import { useContext, useEffect, useState } from "react";
-import { UserContext } from "@/app/contexts";
 import Link from "next/link";
 
 export default function Home() {
-  const { currentRegistration } = useContext(UserContext);
-  const [courses, setCourses] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch(
-          "https://base.piksail.com/api/database/rows/table/727/?user_field_names=true",
-          {
-            headers: {
-              Authorization: `Token ${process.env.NEXT_PUBLIC_BASEROW_PUBLIC_API_TOKEN}`,
-            },
-          },
-        );
-        const data = await response.json();
-        setCourses(data.results);
-        console.log("yoyo", data);
-      } catch (e) {
-        console.error("ERROR");
-      }
-    }
-    fetchData();
-  }, []);
+  const exercices = [
+    {
+      id: 1,
+      description:
+        "Création d'un projet Next.js avec une page d'accueil et deux sous-pages partageant un layout avec un lien vers la page d'accueil.",
+      keywords: ["Next.js", "page"],
+    },
+    {
+      id: 2,
+      description:
+        "Création d'une carte dont la couleur de fond change en fonction d'un input utilisateur.",
+      keywords: ["useState"],
+    },
+    {
+      id: 3,
+      description:
+        "Enregistrer les préférences utilisateur sous forme de liste dans un contexte et les modifier.",
+      keywords: ["useState", "useContext"],
+    },
+    {
+      id: 4,
+      description: "Idem exercice 3, mais en passant par un state manager.",
+      keywords: ["useContext", "useReducer"],
+    },
+    {
+      id: 5,
+      description: "Afficher une liste de formations créées depuis Baserow.",
+      keywords: ["useQuery", "Baserow"],
+    },
+    {
+      id: 6,
+      description:
+        "Afficher une liste de formations créées depuis Baserow et les filtrer à partir d'une liste de tags créés aussi depuis Baserow.",
+      keywords: ["useQuery", "Baserow"],
+    },
+    {
+      // TODO développer cet exo
+      id: 7,
+      description:
+        "Se connecter en utilisant l'API de Baserow pour afficher une liste de formations et les supprimer.",
+      keywords: ["useQuery", "useMutation", "Baserow"],
+    },
+  ];
 
   return (
     <div className="">
-      <header className="h-screen p-7 text-center">
+      <header className="p-7 text-center">
         <nav></nav>
 
-        <h1 className="font-display mt-12 text-8xl">Homepage</h1>
-        <p className="text-3xl">{courses.length} courses</p>
-        {currentRegistration ? (
-          <p>1 current registration</p>
-        ) : (
-          <p>No current registration</p>
-        )}
-        <Link
-          href="/courses"
-          className="bg-hydrangea-300 text-hydrangea-950 mt-12 inline-flex rounded-xl px-6 py-3 font-semibold"
-        >
-          Go to courses
-        </Link>
+        <h1 className="font-display mt-12 text-8xl">Accueil</h1>
+        <p className="text-3xl">{exercices.length} exercices</p>
       </header>
-      {/* <main className="">
-        <ul>
-          {courses.filter((course) => course.category.value === currentUser.preferredCategory).map((course) => (
-            <li key={course.id}>{course.name}</li>
-          ))}
-        </ul>
-      </main> */}
-      <footer></footer>
+      <div className="mx-auto grid max-w-7xl grid-cols-3 gap-7">
+        {exercices.map((exercice) => (
+          <div
+            key={exercice.id}
+            className="flex flex-col gap-7 rounded bg-indigo-500 p-8 text-xl text-white"
+          >
+            <h2 className="text-4xl">Exercice {exercice.id}</h2>
+            <p className="">{exercice.description}</p>
+            <ul className="flex flex-wrap gap-2 text-sm uppercase">
+              {exercice.keywords.map((kw) => (
+                <li key={kw} className="border-[1px] border-white px-2 py-1">
+                  {kw}
+                </li>
+              ))}
+            </ul>
+            <Link
+              href={`/exo-${exercice.id}`}
+              className="mt-auto ml-auto inline-block w-fit rounded bg-white px-4 py-2 text-2xl font-bold text-indigo-500"
+            >
+              Aller à l'exercice
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
