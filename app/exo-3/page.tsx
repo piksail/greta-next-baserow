@@ -3,12 +3,14 @@
 import Link from "next/link";
 import UserPreferredTags from "./components/user-preferred-tags";
 import { PreferredTagsProvider } from "./context";
+import UserContextReader from "./components/user-context-reader";
 
 export default function Exo3() {
   return (
     <main className="mx-auto max-w-7xl p-12 text-center">
       <h1 className="text-7xl font-bold">Exercice 3</h1>
       <PreferredTagsProvider>
+        <UserContextReader />
         <UserPreferredTags />
       </PreferredTagsProvider>
       <Link

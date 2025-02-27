@@ -32,12 +32,12 @@ export default function Exo5() {
         "https://base.piksail.com/api/database/rows/table/727/?user_field_names=true",
         {
           headers: {
-            Authorization: `${process.env.NEXT_PUBLIC_BASEROW_PUBLIC_API_TOKEN}`,
+            Authorization: `Token ${process.env.NEXT_PUBLIC_BASEROW_PUBLIC_API_TOKEN}`,
           },
         },
       ).then((res) => res.json()),
   });
-  const courses = data?.results as { name: string; id: number }[];
+  const courses = (data?.results as { name: string; id: number }[]) ?? [];
 
   return (
     <main className="mx-auto max-w-7xl p-12 text-center">

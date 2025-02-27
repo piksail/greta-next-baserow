@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { PreferredTagsContext } from "../context";
 
 export default function UserPreferredTags() {
-  const [preferredTags, setPreferredTags] = useState<string[]>([]);
+  // If no context is used, use useState
+  // const [preferredTags, setPreferredTags] = useState<string[]>([]);
+  const { preferredTags, setPreferredTags } = useContext(PreferredTagsContext);
 
   const availableTags = ["Dev", "Infra", "UI", "UX"];
 

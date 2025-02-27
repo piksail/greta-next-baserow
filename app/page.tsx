@@ -17,7 +17,7 @@ export default function Home() {
     {
       id: 3,
       description:
-        "Enregistrer les préférences utilisateur sous forme de liste dans un contexte et les modifier.",
+        "Enregistrer une liste de string dans un contexte et les modifier.",
       keywords: ["useState", "useContext"],
     },
     {
@@ -37,11 +37,28 @@ export default function Home() {
       keywords: ["useQuery", "Baserow"],
     },
     {
-      // TODO développer cet exo
       id: 7,
       description:
-        "Se connecter en utilisant l'API de Baserow pour afficher une liste de formations et les supprimer.",
+        "Se connecter en utilisant l'API de Baserow et stocker le résultat dans le session storage.",
+      keywords: ["useMutation", "Baserow"],
+    },
+    {
+      id: 8,
+      description:
+        "En tant qu'utilisateur authentifié sur Baserow, afficher une liste de formations et les supprimer.",
       keywords: ["useQuery", "useMutation", "Baserow"],
+    },
+    {
+      id: 9,
+      description:
+        "En tant qu'utilisateur authentifié sur Baserow, ajouter une nouvelle formation.",
+      keywords: ["useMutation", "Baserow", "react-hook-form"],
+    },
+    {
+      id: 10,
+      description:
+        "En tant qu'utilisateur authentifié sur Baserow, éditer une formation.",
+      keywords: ["useMutation", "Baserow", "Formik"],
     },
   ];
 

@@ -7,6 +7,14 @@ export const PreferredTagsContext = createContext<string[]>([]);
 // TODO typing
 export const PreferredTagsDispatchContext = createContext({});
 
+export function usePreferredTags() {
+  return useContext(PreferredTagsContext);
+}
+
+export function usePreferredTagsDispatch() {
+  return useContext(PreferredTagsDispatchContext);
+}
+
 export function PreferredTagsProvider({
   children,
 }: Readonly<{
@@ -21,14 +29,6 @@ export function PreferredTagsProvider({
       </PreferredTagsDispatchContext.Provider>
     </PreferredTagsContext.Provider>
   );
-}
-
-export function usePreferredTags() {
-  return useContext(PreferredTagsContext);
-}
-
-export function usePreferredTagsDispatch() {
-  return useContext(PreferredTagsDispatchContext);
 }
 
 function preferredTagsReducer(
