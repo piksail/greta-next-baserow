@@ -19,7 +19,7 @@ export default function Exo8() {
     queryKey: ["getCourses"],
     queryFn: () =>
       fetch(
-        "https://base.piksail.com/api/database/rows/table/727/?user_field_names=true",
+        `${process.env.NEXT_PUBLIC_BASEROW_API_URL}database/rows/table/${process.env.NEXT_PUBLIC_BASEROW_COURSE_TABLE_ID}/?user_field_names=true`,
         {
           headers: {
             Authorization: `Token ${process.env.NEXT_PUBLIC_BASEROW_PUBLIC_API_TOKEN}`,
@@ -32,7 +32,7 @@ export default function Exo8() {
   const deleteCourseMutation = useMutation({
     mutationFn: (courseId: BaserowCourse["id"]) =>
       fetch(
-        `https://base.piksail.com/api/database/rows/table/727/${courseId}/?user_field_names=true`,
+        `${process.env.NEXT_PUBLIC_BASEROW_API_URL}database/rows/table/${process.env.NEXT_PUBLIC_BASEROW_COURSE_TABLE_ID}/${courseId}/?user_field_names=true`,
         {
           method: "DELETE",
           headers: {

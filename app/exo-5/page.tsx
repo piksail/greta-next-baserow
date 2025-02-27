@@ -9,7 +9,7 @@ export default function Exo5() {
   //   async function fetchData() {
   //     try {
   //       const response = await fetch(
-  //         "https://base.piksail.com/api/database/rows/table/727/?user_field_names=true",
+  //         `${process.env.NEXT_PUBLIC_BASEROW_API_URL}database/rows/table/${process.env.NEXT_PUBLIC_BASEROW_COURSE_TABLE_ID}/?user_field_names=true`,
   //         {
   //           headers: {
   //             Authorization: `Token ${process.env.NEXT_PUBLIC_BASEROW_PUBLIC_API_TOKEN}`,
@@ -29,7 +29,7 @@ export default function Exo5() {
     queryKey: ["getCourses"],
     queryFn: () =>
       fetch(
-        "https://base.piksail.com/api/database/rows/table/727/?user_field_names=true",
+        `${process.env.NEXT_PUBLIC_BASEROW_API_URL}database/rows/table/${process.env.NEXT_PUBLIC_BASEROW_COURSE_TABLE_ID}/?user_field_names=true`,
         {
           headers: {
             Authorization: `Token ${process.env.NEXT_PUBLIC_BASEROW_PUBLIC_API_TOKEN}`,

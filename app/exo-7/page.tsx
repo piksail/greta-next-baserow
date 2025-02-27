@@ -19,16 +19,19 @@ export default function Exo7() {
   const loginMutation = useMutation({
     mutationFn: (event: Event) => {
       event.preventDefault();
-      return fetch("https://base.piksail.com/api/user/token-auth/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      return fetch(
+        `${process.env.NEXT_PUBLIC_BASEROW_API_URL}user/token-auth/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
         },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      }).then((res) => res.json());
+      ).then((res) => res.json());
     },
     onSuccess: (data) => {
       const { access_token, refresh_token } = data;
@@ -39,15 +42,18 @@ export default function Exo7() {
 
   const refreshTokenMutation = useMutation({
     mutationFn: () => {
-      return fetch("https://base.piksail.com/api/user/token-refresh/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      return fetch(
+        `${process.env.NEXT_PUBLIC_BASEROW_API_URL}user/token-refresh/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            refresh_token: refreshToken,
+          }),
         },
-        body: JSON.stringify({
-          refresh_token: refreshToken,
-        }),
-      }).then((res) => res.json());
+      ).then((res) => res.json());
     },
     onSuccess: (data) => {
       const { access_token } = data;
