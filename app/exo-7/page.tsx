@@ -119,6 +119,9 @@ export default function Exo7() {
           Rafraîchir la session
         </button>
       )}
+      {accessToken && refreshTokenMutation.isSuccess && (
+        <p className="">Session rafraîchie</p>
+      )}
 
       <Link
         href="/"
