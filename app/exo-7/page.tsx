@@ -103,6 +103,12 @@ export default function Exo7() {
             Une erreur est survenue : {loginMutation.error.message}
           </p>
         )}
+
+        {loginMutation.isSuccess && (
+          <p className="mt-12 bg-green-600 text-2xl text-white">
+            Authentifié en tant que : {loginMutation.data.user.first_name}
+          </p>
+        )}
       </form>
 
       {accessToken && (
