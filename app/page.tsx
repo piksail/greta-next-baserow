@@ -65,12 +65,10 @@ export default function Home() {
   return (
     <div className="">
       <header className="p-7 text-center">
-        <nav></nav>
-
         <h1 className="font-display mt-12 text-8xl">Accueil</h1>
         <p className="text-3xl">{exercices.length} exercices</p>
       </header>
-      <div className="mx-auto grid max-w-7xl grid-cols-3 gap-7">
+      <nav className="mx-auto grid max-w-7xl grid-cols-3 gap-7">
         {exercices.map((exercice) => (
           <div
             key={exercice.id}
@@ -89,11 +87,11 @@ export default function Home() {
               href={`/exo-${exercice.id}`}
               className="mt-auto ml-auto inline-block w-fit rounded bg-white px-4 py-2 text-2xl font-bold text-indigo-500"
             >
-              Aller à l'exercice
+              Aller à l&apos;exercice
             </Link>
           </div>
         ))}
-      </div>
+      </nav>
     </div>
   );
 }
