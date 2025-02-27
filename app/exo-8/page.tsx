@@ -10,9 +10,6 @@ export default function Exo8() {
   const queryClient = useQueryClient();
   const [accessToken, setAccessToken] = useSessionStorage("access_token", "");
 
-  // TODO exo 9 formik ?
-  // TODO exo 10 react-hook-forms ?
-
   const { isPending, error, data } = useQuery<
     BaserowQueryResult<BaserowCourse, false>
   >({
