@@ -152,7 +152,7 @@ export default function Home() {
     },
     {
       id: 16,
-      description: "Idem exercice 3, mais en utilisant Zustand",
+      description: "Idem exercice 3, mais en utilisant Zustand.",
       conditions: [
         "La liste doit être modifiable par un enfant du store",
         "La liste doit être enregistrée dans le local storage",
@@ -161,8 +161,22 @@ export default function Home() {
     },
     {
       id: 17,
-      description: "Mettre en place une librairie de composants UI",
+      description: "Mettre en place une librairie de composants UI.",
       keywords: ["shadcn"],
+    },
+    {
+      id: 18,
+      description: "S'inscrire à une formation.",
+      conditions: [
+        "Définir une base de données avec une table pour les formations et une autre pour les inscriptions",
+        "Une formation doit avoir à minima un nom et une date de début",
+        "Une inscription doit avoir à minima un email, un nom, un prénom et une référence vers une formation",
+        "Créer un formulaire en 3 étapes",
+        "La première étape permet de choisir une formation",
+        "La seconde étape permet de renseigner ses informations",
+        "La dernière étape permet de valider un formulaire et enregistrer l'inscription dans Baserow",
+      ],
+      keywords: ["Baserow"],
     },
   ];
 
