@@ -1,44 +1,14 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-clay-50: #fffefd;
---color-clay-100: #ffebd5;
---color-clay-200: #fed2aa;
---color-clay-300: #fdb274;
---color-clay-400: #fb873c;
---color-clay-500: #f96616;
---color-clay-600: #ea4c0c;
---color-clay-700: #c2370c;
---color-clay-800: #9a2c12;
---color-clay-900: #7c2712;
---color-clay-950: #431107;
---color-fir-50: #edfcf6;
---color-fir-100: #d4f7e7;
---color-fir-200: #aceed4;
---color-fir-300: #76dfbb;
---color-fir-400: #34b68e;
---color-fir-500: #1cad85;
---color-fir-600: #0f8c6c;
---color-fir-700: #0c705a;
---color-fir-800: #0c5947;
---color-fir-900: #0b493d;
---color-fir-950: #052922;
---color-hydrangea-50: #fdf5fe;
---color-hydrangea-100: #fbebfc;
---color-hydrangea-200: #f6d6f8;
---color-hydrangea-300: #eda0ed;
---color-hydrangea-400: #e88ae7;
---color-hydrangea-500: #d85dd6;
---color-hydrangea-600: #bc3db7;
---color-hydrangea-700: #9b3094;
---color-hydrangea-800: #7f2978;
---color-hydrangea-900: #692663;
---color-hydrangea-950: #440e3f;
---font-body: "Geist";
---font-display: "Alkalami";
---font-mono: "Geist Mono";
+
+  --font-body: "Geist";
+  --font-display: "Alkalami";
+  --font-mono: "Geist Mono";
 }
 
 :root {

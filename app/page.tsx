@@ -66,6 +66,18 @@ export default function Home() {
         "Installer ESlint et Prettier et mettre en place le format-on-save sur son IDE.",
       keywords: ["ESlint", "Prettier"],
     },
+    {
+      id: 12,
+      description:
+        "Créer votre site web perso en utilisant Next.js en SSG et le déployer en production (ou en URL temporaire) à l'aide de Vercel.",
+      keywords: ["GitHub", "Vercel", "Tailwind"],
+    },
+    {
+      id: 13,
+      description:
+        "Utiliser Tailwind pour définir des classes pour thème sombre et permettre le changement entre thèmes clair et sombre.",
+      keywords: ["Tailwind"],
+    },
   ];
 
   return (
