@@ -162,7 +162,10 @@ export default function Home() {
     {
       id: 17,
       description: "Mettre en place une librairie de composants UI.",
-      keywords: ["shadcn"],
+      conditions: [
+        "Le choix de la librairie est libre, mais la version de Next.js étant récente, shadcn a été choisi pour la correction, car il est compatible Next.js v15 et Tailwind v4",
+      ],
+      keywords: ["Shadcn/ui"],
     },
     {
       id: 18,
