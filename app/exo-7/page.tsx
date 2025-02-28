@@ -8,6 +8,8 @@ import { useSessionStorage } from "@uidotdev/usehooks";
 export default function Exo7() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  // Depending on the use case, localStorage could be more appropriate
   const [accessToken, setAccessToken] = useSessionStorage("access_token", "");
   const [refreshToken, setRefreshToken] = useSessionStorage(
     "refresh_token",

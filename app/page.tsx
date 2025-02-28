@@ -60,6 +60,12 @@ export default function Home() {
         "En tant qu'utilisateur authentifié sur Baserow, éditer une formation.",
       keywords: ["useMutation", "Baserow", "Formik"],
     },
+    {
+      id: 11,
+      description:
+        "Installer ESlint et Prettier et mettre en place le format-on-save sur son IDE.",
+      keywords: ["ESlint", "Prettier"],
+    },
   ];
 
   return (
