@@ -78,6 +78,12 @@ export default function Home() {
         "Utiliser Tailwind pour définir des classes pour thème sombre et permettre le changement entre thèmes clair et sombre.",
       keywords: ["Tailwind"],
     },
+    {
+      id: 14,
+      description:
+        "Utiliser TypeScript pour typer le modèle de vos tables Baserow ainsi que le résultat des appels API Baserow.",
+      keywords: ["TS", "Baserow"],
+    },
   ];
 
   return (
