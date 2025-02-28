@@ -84,6 +84,12 @@ export default function Home() {
         "Utiliser TypeScript pour typer le modèle de vos tables Baserow ainsi que le résultat des appels API Baserow.",
       keywords: ["TS", "Baserow"],
     },
+    {
+      id: 15,
+      description:
+        "Mettre en place une suite de tests unitaires et l'exécuter via un script de package.json.",
+      keywords: ["Vitest"],
+    },
   ];
 
   return (
