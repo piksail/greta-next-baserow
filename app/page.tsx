@@ -159,6 +159,11 @@ export default function Home() {
       ],
       keywords: ["Zustand"],
     },
+    {
+      id: 17,
+      description: "Mettre en place une librairie de composants UI",
+      keywords: ["shadcn"],
+    },
   ];
 
   return (
