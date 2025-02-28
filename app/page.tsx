@@ -73,7 +73,7 @@ export default function Home() {
       conditions: [
         "Créer un compte Baserow",
         "Se connecter en fournissant un email et un mot de passe",
-        "Afficher les formations en utilisant l'API générée par Baserow",
+        "Afficher les formations en utilisant l'API générée par Baserow (autorisant la lecture uniquement)",
         "Supprimer une formation en utilisant la session utilisateur",
       ],
       keywords: ["useQuery", "useMutation", "Baserow"],
@@ -99,6 +99,7 @@ export default function Home() {
         "Se connecter en fournissant un email et un mot de passe",
         "Créer un formulaire avec Formik",
         "Editer une formation en utilisant le formulaire et la session utilisateur",
+        "Le choix de la formation à éditer doit se faire via un select",
       ],
       keywords: ["useMutation", "Baserow", "Formik"],
     },
@@ -117,6 +118,8 @@ export default function Home() {
         "Créer votre site web perso en utilisant Next.js et le déployer en production (ou en URL temporaire) à l'aide de Vercel.",
       conditions: [
         "Le site doit être généré statiquement donc utiliser Next.js en SSG",
+        "Le site doit reprendre les informations de votre CV (expérience professionnelle, formation, projets, ...)",
+        "Le site doit reprendre l'identité visuelle de votre CV (couleurs, font, ...)",
       ],
       keywords: ["GitHub", "Vercel", "Tailwind"],
     },
