@@ -150,6 +150,12 @@ export default function Home() {
       ],
       keywords: ["Vitest"],
     },
+    {
+      id: 16,
+      description: "Idem exercice 3, mais en utilisant Zustand",
+      conditions: ["La liste doit être modifiable par un enfant du store"],
+      keywords: ["Zustand"],
+    },
   ];
 
   return (
