@@ -186,7 +186,7 @@ export default function Home() {
         <h1 className="font-display mt-12 text-8xl">Accueil</h1>
         <p className="text-3xl">{exercices.length} exercices</p>
       </header>
-      <nav className="mx-auto grid max-w-7xl grid-cols-3 gap-7">
+      <nav className="mx-auto grid max-w-7xl grid-cols-3 gap-7 p-7">
         {exercices.map((exercice) => (
           <div
             key={exercice.id}
