@@ -52,7 +52,7 @@ export default function Home() {
       id: 9,
       description:
         "En tant qu'utilisateur authentifié sur Baserow, ajouter une nouvelle formation.",
-      keywords: ["useMutation", "Baserow", "react-hook-form"],
+      keywords: ["useMutation", "Baserow", "react-hook-form", "axios"],
     },
     {
       id: 10,
@@ -76,13 +76,16 @@ export default function Home() {
           >
             <h2 className="text-4xl">Exercice {exercice.id}</h2>
             <p className="">{exercice.description}</p>
-            <ul className="flex flex-wrap gap-2 text-sm uppercase">
-              {exercice.keywords.map((kw) => (
-                <li key={kw} className="border-[1px] border-white px-2 py-1">
-                  {kw}
-                </li>
-              ))}
-            </ul>
+            <div>
+              <p className="mb-2">Outils requis pour l&apos;exercice&nbsp;:</p>
+              <ul className="flex flex-wrap gap-2 text-sm uppercase">
+                {exercice.keywords.map((kw) => (
+                  <li key={kw} className="border-[1px] border-white px-2 py-1">
+                    {kw}
+                  </li>
+                ))}
+              </ul>
+            </div>
             <Link
               href={`/exo-${exercice.id}`}
               className="mt-auto ml-auto inline-block w-fit rounded bg-white px-4 py-2 text-2xl font-bold text-indigo-500"
