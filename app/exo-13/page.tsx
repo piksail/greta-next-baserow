@@ -1,3 +1,5 @@
+// https://tailwindcss.com/docs/dark-mode
+
 "use client";
 
 import Link from "next/link";
