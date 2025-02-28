@@ -45,7 +45,7 @@ export default function Home() {
     {
       id: 8,
       description:
-        "En tant qu'utilisateur authentifié sur Baserow, afficher une liste de formations et les supprimer.",
+        "En tant qu'utilisateur authentifié sur Baserow, afficher une liste de formations et les rendre supprimables.",
       keywords: ["useQuery", "useMutation", "Baserow"],
     },
     {
