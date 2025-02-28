@@ -4,12 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 
 export default function Exo5() {
-  // Without useQuery, here would be the result
+  // Without useQuery, nor axios, here would be the result
   // useEffect(() => {
   //   async function fetchData() {
   //     try {
   //       const response = await fetch(
-  //         `${process.env.NEXT_PUBLIC_BASEROW_API_URL}database/rows/table/${process.env.NEXT_PUBLIC_BASEROW_COURSE_TABLE_ID}/?user_field_names=true`,
+  //         `${process.env.NEXT_PUBLIC_BASEROW_API_URL}database/rows/table/${process.env.NEXT_PUBLIC_BASEROW_COURSE_TABLE_ID}/22/?user_field_names=true`,
   //         {
   //           headers: {
   //             Authorization: `Token ${process.env.NEXT_PUBLIC_BASEROW_PUBLIC_API_TOKEN}`,
@@ -17,9 +17,23 @@ export default function Exo5() {
   //         },
   //       );
   //       const data = await response.json();
-  //       setCourses(data.results);
   //     } catch (e) {
   //       console.error("ERROR");
+  //     }
+  //   }
+  //   fetchData();
+  // }, []);
+
+  // Without useQuery, here would be the result
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const data = await axios.get(
+  //         `database/rows/table/${process.env.NEXT_PUBLIC_BASEROW_COURSE_TABLE_ID}/22/?user_field_names=true`,
+  //       );
+  //       console.log(data);
+  //     } catch (e) {
+  //       console.error({ e });
   //     }
   //   }
   //   fetchData();
