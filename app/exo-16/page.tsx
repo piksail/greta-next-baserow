@@ -2,16 +2,31 @@
 
 import Link from "next/link";
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 import UserStoreReader from "./components/user-store-reader";
 import UserPreferredTags from "./components/user-preferred-tags";
+
+// Non-persistent store
+// export const usePreferredTagsStore = create<{
+//   preferredTags: string[];
+//   updateTags: (tags: string[]) => void;
+// }>((set) => ({
+//   preferredTags: [],
+//   updateTags: (tags: string[]) => set({ preferredTags: tags }),
+// }));
 
 export const usePreferredTagsStore = create<{
   preferredTags: string[];
   updateTags: (tags: string[]) => void;
-}>((set) => ({
-  preferredTags: [],
-  updateTags: (tags: string[]) => set({ preferredTags: tags }),
-}));
+}>()(
+  persist(
+    (set) => ({
+      preferredTags: [],
+      updateTags: (tags: string[]) => set({ preferredTags: tags }),
+    }),
+    { name: "greta-exo-16-storage" },
+  ),
+);
 
 export default function Exo16() {
   return (

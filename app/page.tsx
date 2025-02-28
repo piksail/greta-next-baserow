@@ -153,7 +153,10 @@ export default function Home() {
     {
       id: 16,
       description: "Idem exercice 3, mais en utilisant Zustand",
-      conditions: ["La liste doit être modifiable par un enfant du store"],
+      conditions: [
+        "La liste doit être modifiable par un enfant du store",
+        "La liste doit être enregistrée dans le local storage",
+      ],
       keywords: ["Zustand"],
     },
   ];
