@@ -191,6 +191,16 @@ export default function Home() {
       ],
       keywords: ["Baserow", "middleware"],
     },
+    {
+      id: 20,
+      description:
+        "Créer une route API permettant d'accéder à la liste des formations, et une autre permettant d'accéder à une formation pour un ID donné.",
+      conditions: [
+        "Définir une route /courses",
+        "Définir une route /courses/:id",
+      ],
+      keywords: ["Baserow", "endpoint"],
+    },
   ];
 
   return (
