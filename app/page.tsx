@@ -181,6 +181,16 @@ export default function Home() {
       ],
       keywords: ["Baserow"],
     },
+    {
+      id: 19,
+      description: "Protéger une route.",
+      conditions: [
+        "Définir une sous-page page privée, accessible uniquement avec authentification",
+        "Définir une sous-page publique servant de redirection en cas d'accès à la sous-page privée sans authentification",
+        "Le middleware doit rediriger vers la sous-page privée en cas d'accès à la sous-page publique",
+      ],
+      keywords: ["Baserow", "middleware"],
+    },
   ];
 
   return (
