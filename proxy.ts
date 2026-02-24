@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 const privateRoutes = ["/exo-19/sous-page-privee"];
 const publicRoutes = ["/exo-19/sous-page-publique"];
 
-export default async function middleware(req: NextRequest) {
+export default async function proxy(req: NextRequest) {
   const path = req.nextUrl.pathname;
   const isPrivateRoute = privateRoutes.includes(path); // Routes to protect
   const isPublicRoute = publicRoutes.includes(path); // Routes to ignore if authenticated
