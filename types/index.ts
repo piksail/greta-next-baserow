@@ -1,4 +1,15 @@
-import { BaserowForeignKeyRelation, BaserowSelectOption, BaserowTable } from "./baserow";
+import {
+  BaserowForeignKeyRelation,
+  BaserowSelectOption,
+  BaserowTable,
+} from "./baserow";
+
+export interface Exercise {
+  slug: string;
+  description: string;
+  conditions: string[];
+  keywords: string[];
+}
 
 interface BaserowLocation {
   address: string;
@@ -27,7 +38,7 @@ export interface BaserowCourse extends BaserowTable {
   tags: BaserowForeignKeyRelation[];
   body: string | null;
   image: BaserowFile[];
-  category: BaserowSelectOption<string>
+  category: BaserowSelectOption<string>;
 }
 
 export interface BaserowCourseTag extends BaserowTable {
@@ -81,19 +92,18 @@ export interface BaserowLabellingApplication extends BaserowTable {
   note?: string;
 }
 
-export interface BaserowLabellingApplicationCsv
-  extends Pick<
-    BaserowLabellingApplication,
-    | "email"
-    | "institution"
-    | "course_title"
-    | "course_start_date"
-    | "course_end_date"
-    | "course_duration"
-    | "course_address"
-    | "participant_number"
-    | "note"
-  > {
+export interface BaserowLabellingApplicationCsv extends Pick<
+  BaserowLabellingApplication,
+  | "email"
+  | "institution"
+  | "course_title"
+  | "course_start_date"
+  | "course_end_date"
+  | "course_duration"
+  | "course_address"
+  | "participant_number"
+  | "note"
+> {
   // Below properties are appended after parsing
   profiles?: number[];
   application_date?: string;
@@ -234,8 +244,7 @@ export interface RegisterMemberToCourseInputs {
 }
 
 export interface RegisterInputs
-  extends ProfileInputs,
-    Omit<LogInInputs, "isAdmin"> {
+  extends ProfileInputs, Omit<LogInInputs, "isAdmin"> {
   state: "active" | "waiting_validation";
 }
 
@@ -255,7 +264,8 @@ export interface AcceptWorkspaceInvitationInputs {
 }
 
 export interface CreateAccountInputs
-  extends Omit<LogInInputs, "isAdmin">,
+  extends
+    Omit<LogInInputs, "isAdmin">,
     Pick<ProfileInputs, "familyName" | "givenName"> {}
 
 export interface CreateProfileInputs extends ProfileInputs {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Alkalami, Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 
@@ -10,12 +10,6 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const alkalami = Alkalami({
-  variable: "--font-alkalami",
-  weight: "400",
   subsets: ["latin"],
 });
 
@@ -30,9 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" data-theme="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${alkalami.variable} font-body bg-white text-indigo-950 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-body bg-background text-foreground antialiased`}
       >
         <Providers>{children}</Providers>
       </body>
